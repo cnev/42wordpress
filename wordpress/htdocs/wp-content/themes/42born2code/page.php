@@ -10,6 +10,5 @@
 	</div><!-- entry -->
 <?php if ( get_post_custom_values('comments') ) comments_template() ?>
 </div><!-- #content -->
-
 <?php get_sidebar() ?>
 <?php get_footer() ?>

@@ -1,4 +1,7 @@
 <?php
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 200, 150, true ); // Normal post thumbnails
+add_custom_background();
 
 function set_preregister_form() {
 	$str = '<div id="preregister"><form action="./wp-content/themes/42born2code/preregister.php" method="get">
@@ -33,10 +36,9 @@ function register_my_menus() {
 		));
 }
 
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 200, 150, true ); // Normal post thumbnails
 
-add_custom_background();
+
+
 
 // Custom comment listing
 function wpbx_comment($comment, $args, $depth) {

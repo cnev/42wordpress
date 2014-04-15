@@ -1,0 +1,42 @@
+function		moody42_init()
+{
+	if (!function_exists('register_sidebar_widget'))
+		return ;
+}
+function		moody42($args)
+{
+	extract($args);
+	echo $before_widget;
+?>
+	<form action="" method="POST">
+	<?php echo $before_title . $title . $after_title; ?>
+	Ajoutez vos réseaux sociaux à votre profil !<br />
+	<select name="page_type">
+		<option value="Facebook">Facebook</option>
+		<option value="Twitter">Twitter</option>
+		<option value="Plus tard">Plus tard</option>
+	</select><input type="text" name="user_social" /><br />
+	... Ou une vidéo Dailymotion !<input type="text" name="user_dailymotion" /><br />
+	Etes-vous de bonne humeur ?<br />
+	<select name="mood">
+		<option value="Heureux">Heureux</option>
+		<option value="Amoureux">Amoureux</option>
+		<option value="Enervé">Enervé</option>
+		<option value="Triste">Triste</option>
+		<option value="undefined">Pas d'humeur particulière</option>
+	</select>
+	</form>
+<?php
+	echo $after_widget;
+}
+function		moody42_control()
+{
+?>
+
+<?php
+}
+
+wp_register_sidebar_widget('widget_moody42', __('Moody 42'), 'moody42');
+wp_register_widget_control('widget_moody42', __('Moody 42'), 'moody42_control');
+add_action('widgets_init','moody42_init');
+?>
